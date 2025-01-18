@@ -19,78 +19,78 @@
 :dataset
     a rb:Dataset, dcat:Dataset ;
     dcterms:conformsTo <https://w3id.org/riverbench/schema/metadata> ;
-    dcterms:identifier "[YOUR DATASET ID (only a-z, 0-9, -)]" ;
+    dcterms:identifier "osm2rdf-denmark" ;
 
-    dcterms:title "[HUMAN-READABLE NAME OF YOUR DATASET]"@en ;
-    dcterms:description """[ELABORATED DESCRIPTION OF THE DATASET]"""@en ;
-    dcterms:issued "[DATE OF INITIAL SUBMISSION TO RIVERBENCH, YYYY-MM-DD]"^^xsd:date ;
+    dcterms:title "osm2rdf-denmark"@en ;
+    dcterms:description """The dataset is based on datasets that were derived from OpenStreetMap data using the osm2rdf tool. It includes information about each element which is of type node (osm:node), way (osm:way) or relation (osm:relation). Nodes are a core concept in OSM and they represent a single point in space defined by geographic coordinates. A node itself can describe for example a city, town, road junction, post box etc.. A way is line, represents linear features on the ground - like a road. It consist of an ordered node list. A relation is a colection of the three core elements: nodes, ways and relations. Each element contains all atributes associated with it."""@en ;
+    dcterms:issued "2025-01-18"^^xsd:date ;
 
     # License and attribution
     # SPDX license list: https://spdx.org/licenses/
     # Do not include ".html" at the end of the SPDX license URL
     # Example of a valid URL: https://spdx.org/licenses/CC-BY-4.0
-    dcterms:license <SPDX-LICENSE-URL> ;
-    dcterms:rights "[ADDITIONAL LICENSING NOTES, IF NEEDED, OTHERWISE REMOVE THIS]"@en ;
-    # Feel free to add more creators or use any FOAF properties here
-    # All fields are optional, but at least one creator is required
+    dcterms:license <https://spdx.org/licenses/ODbL-1.0> ;
     dcterms:creator [
-        foaf:name "[YOUR NAME]" ;
-        foaf:nick "[YOUR NICK]" ;
-        foaf:homepage <LINK-TO-YOUR-PAGE> ;
-        rdfs:comment "[EXPLAIN, E.G., YOUR ROLE IN THE DATASET CREATION]"@en ;
+        foaf:name "Karol Nowiński" ;
+        foaf:nick "karol-nowinski" ;
+        foaf:homepage <https://github.com/karol-nowinski> ;
         # Use this property to order creators in the generated docs (from 1 to N)
         rbdoc:hasDocWeight 1 ;
     ] ;
     # If applicable, add a link or multiples links to the original source of the dataset
-    dcterms:source <LINK-TO-SOURCE> ;
+    dcterms:source <https://osm2rdf.cs.uni-freiburg.de/> ;
     
     # Themes from EuroVoc
     # E.g., eurovoc:4267, eurovoc:7219
     # Use only concepts (those without numbers in their names), 
     # not domain concepts or concept schemes.
     # EuroVoc browser: https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?IRI=http://eurovoc.europa.eu/100141
-    dcat:theme eurovoc:ADD-AT-LEAST-ONE-THEME ;
+    dcat:theme 
+        eurovoc:6030, # data collection
+        eurovoc:c_7a168de0, # spatial data
+        eurovoc:1148 ; # geography
 
     # Technical metadata
     # IRIs of the vocabularies and ontologies used in the dataset
-    void:vocabulary <ADD-VOCABULARY-IRIS> ;
+    void:vocabulary 
+        <http://www.opengis.net/ont/geosparql#>,
+        <http://www.w3.org/2001/XMLSchema#>,
+        <http://www.opengis.net/rdf#>,
+        <https://osm2rdf.cs.uni-freiburg.de/rdf#>,   
+        ;
     # Set to number of stream elements in the dataset
-    rb:hasStreamElementCount -1 ;
+    rb:hasStreamElementCount 2030923 ;
     # Stream type according to the RDF Stream Taxonomy (RDF-STaX)
     # Each dataset must have two stream type usages: one for the grouped
     # stream type and one for the flat stream type.
     # Full list of stream types: https://w3id.org/stax/dev/taxonomy/
     stax:hasStreamTypeUsage [
         a stax:RdfStreamTypeUsage ;
-        rdfs:comment "[GROUPED STREAM TYPE EXPLANATION]"@en ;
-        stax:hasStreamType stax:GROUPED-STREAM-TYPE-IRI ;
+        rdfs:comment "The dataset can be viewed as a stream of graphs. Each graph corresponds to one core element of OpenStreetMap: node, way or relation"@en ;
+        stax:hasStreamType stax:graphStream ;
     ] , [
         a stax:RdfStreamTypeUsage ;
-        rdfs:comment "[FLAT STREAM TYPE EXPLANATION]"@en ;
-        stax:hasStreamType stax:FLAT-STREAM-TYPE-IRI ;
+        rdfs:comment "The dataset can be viewed as a flattened stream of triples."@en ;
+        stax:hasStreamType stax:flatTripleStream ;
     ] ;
     rb:hasStreamElementSplit [
-        # At least one of: rb:StatementCountStreamElementSplit,
-        #   rb:TimeStreamElementSplit, rb:TopicStreamElementSplit
-        a <SPLIT-TYPE> ;
-
-        # If your dataset is split by time, you must specify the temporal property.
-        # Example: https://github.com/RiverBench/dataset-assist-iot-weather-graphs/blob/main/metadata.ttl
-        # rb:hasTemporalProperty <PROPERTY-IRI> ;
-
-        rdfs:comment "[FURTHER EXPLANATION ON THE SPLIT]"@en ;
+        a rb:TopicStreamElementSplit ;
+        rdfs:comment "Each stream element corresponds to one basic component of OpenStreetMap: node, way or relation. "@en ;
 
         # If your dataset is an RDF subject graph stream, you must specify the
         # subject node shape using SHACL.
         # Example: https://github.com/RiverBench/dataset-linked-spending/blob/main/metadata.ttl
         # SHACL documentation: https://www.w3.org/TR/shacl/#constraints-section
-        # rb:hasSubjectShape [  ] ;
+        rb:hasSubjectShape [
+            rdfs:comment "Target instances of any class."@en ;
+            sh:targetSubjectsOf <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+        ] ;
     ] ;
-    rb:conformsToRdf11 "" ; # true or false
-    rb:conformsToRdfStarDraft_20211217 "" ; # true or false
-    rb:usesGeneralizedRdfDatasets "" ; # true or false
-    rb:usesGeneralizedTriples "" ; # true or false
-    rb:usesRdfStar "" ; # true or false
+    rb:conformsToRdf11 "true" ; # true or false
+    rb:conformsToRdfStarDraft_20211217 "true" ; # true or false
+    rb:usesGeneralizedRdfDatasets "false" ; # true or false
+    rb:usesGeneralizedTriples "false" ; # true or false
+    rb:usesRdfStar "false" ; # true or false
     
     # Add any additional metadata here
     # Examples of useful properties:
