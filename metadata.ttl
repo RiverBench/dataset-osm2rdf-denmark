@@ -86,11 +86,11 @@
             sh:targetSubjectsOf <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
         ] ;
     ] ;
-    rb:conformsToRdf11 "true" ; # true or false
-    rb:conformsToRdfStarDraft_20211217 "true" ; # true or false
-    rb:usesGeneralizedRdfDatasets "false" ; # true or false
-    rb:usesGeneralizedTriples "false" ; # true or false
-    rb:usesRdfStar "false" ; # true or false
+    rb:conformsToRdf11 true ; # true or false
+    rb:conformsToRdfStarDraft_20211217 true ; # true or false
+    rb:usesGeneralizedRdfDatasets false ; # true or false
+    rb:usesGeneralizedTriples false ; # true or false
+    rb:usesRdfStar false ; # true or false
     
     # Add any additional metadata here
     # Examples of useful properties:
