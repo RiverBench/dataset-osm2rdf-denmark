@@ -56,8 +56,8 @@
         <http://www.opengis.net/ont/geosparql#>,
         <http://www.w3.org/2001/XMLSchema#>,
         <http://www.opengis.net/rdf#>,
-        <https://osm2rdf.cs.uni-freiburg.de/rdf#>,   
-        ;
+        <https://osm2rdf.cs.uni-freiburg.de/rdf#> 
+    ;
     # Set to number of stream elements in the dataset
     rb:hasStreamElementCount 2030923 ;
     # Stream type according to the RDF Stream Taxonomy (RDF-STaX)
