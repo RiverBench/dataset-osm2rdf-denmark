@@ -22,7 +22,7 @@
     dcterms:identifier "osm2rdf-denmark" ;
 
     dcterms:title "osm2rdf-denmark"@en ;
-    dcterms:description """The dataset is based on datasets that were derived from OpenStreetMap data using the osm2rdf tool. It includes information about each element which is of type node (osm:node), way (osm:way) or relation (osm:relation). Nodes are a core concept in OSM and they represent a single point in space defined by geographic coordinates. A node itself can describe for example a city, town, road junction, post box etc.. A way is line, represents linear features on the ground - like a road. It consist of an ordered node list. A relation is a colection of the three core elements: nodes, ways and relations. Each element contains all atributes associated with it."""@en ;
+    dcterms:description """The dataset is based on datasets that were derived from OpenStreetMap data using the osm2rdf tool. It includes information about each element which is of type node (osm:node), way (osm:way) or relation (osm:relation). Nodes are a core concept in OSM and they represent a single point in space defined by geographic coordinates. A node itself can describe for example a city, town, road junction, post box etc. A way is line, represents linear features on the ground - like a road. It consist of an ordered node list. A relation is a colection of the three core elements: nodes, ways and relations. Each element contains all atributes associated with it."""@en ;
     dcterms:issued "2025-01-18"^^xsd:date ;
 
     # License and attribution
@@ -44,18 +44,17 @@
     # E.g., eurovoc:4267, eurovoc:7219
     # Use only concepts (those without numbers in their names), 
     # not domain concepts or concept schemes.
-    # EuroVoc browser: https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?IRI=http://eurovoc.europa.eu/100141
+    # EuroVoc browser: https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://eurovoc.europa.eu/100141
     dcat:theme 
-        eurovoc:6030, # data collection
+        eurovoc:336, # Denmark
         eurovoc:c_7a168de0, # spatial data
-        eurovoc:1148 ; # geography
+        eurovoc:5269 ; # cartography
 
     # Technical metadata
     # IRIs of the vocabularies and ontologies used in the dataset
     void:vocabulary 
-        <http://www.opengis.net/ont/geosparql#>,
-        <http://www.w3.org/2001/XMLSchema#>,
-        <http://www.opengis.net/rdf#>,
+        <http://www.opengis.net/ont/geosparql#> ,
+        <http://www.opengis.net/rdf#> ,
         <https://osm2rdf.cs.uni-freiburg.de/rdf#> 
     ;
     # Set to number of stream elements in the dataset
@@ -66,8 +65,8 @@
     # Full list of stream types: https://w3id.org/stax/dev/taxonomy/
     stax:hasStreamTypeUsage [
         a stax:RdfStreamTypeUsage ;
-        rdfs:comment "The dataset can be viewed as a stream of graphs. Each graph corresponds to one core element of OpenStreetMap: node, way or relation"@en ;
-        stax:hasStreamType stax:graphStream ;
+        rdfs:comment "The dataset can be viewed as a stream of graphs. Each graph corresponds to one core element of OpenStreetMap: node, way or relation and is uniquely identified by the subject IRI."@en ;
+        stax:hasStreamType stax:subjectGraphStream ;
     ] , [
         a stax:RdfStreamTypeUsage ;
         rdfs:comment "The dataset can be viewed as a flattened stream of triples."@en ;
