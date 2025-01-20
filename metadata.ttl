@@ -36,9 +36,29 @@
         foaf:homepage <https://github.com/karol-nowinski> ;
         # Use this property to order creators in the generated docs (from 1 to N)
         rbdoc:hasDocWeight 1 ;
-    ] ;
+    ] , [
+        foaf:name "Hannah Bast" ;
+        rdfs:comment "Co-author of the osm2rdf tool - OpenStreetMap RDF converter"@en ;
+        rbdoc:hasDocWeight 1 ;
+    ], [
+        foaf:name "Johannes Kalmbach" ;
+        rdfs:comment "Co-author of the osm2rdf tool - OpenStreetMap RDF converter"@en ;
+        rbdoc:hasDocWeight 1 ;
+    ], [
+        foaf:name "Axel Lehmann" ;
+        rdfs:comment "Co-author of the osm2rdf tool - OpenStreetMap RDF converter"@en ;
+        rbdoc:hasDocWeight 1 ;
+    ], [
+        foaf:name "Patrick Brosi" ;
+        rdfs:comment "Co-author of the osm2rdf tool - OpenStreetMap RDF converter"@en ;
+        rbdoc:hasDocWeight 1 ;
+    ], [
+        foaf:name "OpenStreetMap & contributors" ;
+        foaf:homepage <https://www.openstreetmap.org/>, <https://wiki.openstreetmap.org/wiki/Contributors#Denmark> ;
+        rbdoc:hasDocWeight 1 ;
+    ];
     # If applicable, add a link or multiples links to the original source of the dataset
-    dcterms:source <https://osm2rdf.cs.uni-freiburg.de/> ;
+    dcterms:source <https://doi.org/10.1145/3474717.3484256> ;
     
     # Themes from EuroVoc
     # E.g., eurovoc:4267, eurovoc:7219
