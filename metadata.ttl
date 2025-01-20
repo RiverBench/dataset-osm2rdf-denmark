@@ -22,7 +22,7 @@
     dcterms:identifier "osm2rdf-denmark" ;
 
     dcterms:title "osm2rdf-denmark"@en ;
-    dcterms:description """The dataset is based on datasets that were derived from OpenStreetMap data using the osm2rdf tool. It includes information about each element which is of type node (osm:node), way (osm:way) or relation (osm:relation). Nodes are a core concept in OSM and they represent a single point in space defined by geographic coordinates. A node itself can describe for example a city, town, road junction, post box etc. A way is line, represents linear features on the ground - like a road. It consist of an ordered node list. A relation is a colection of the three core elements: nodes, ways and relations. Each element contains all atributes associated with it."""@en ;
+    dcterms:description """The dataset is based on datasets that were derived from OpenStreetMap data using the osm2rdf tool. It includes information about each element which is of type node (osm:node), way (osm:way) or relation (osm:relation). Nodes are a core concept in OSM and they represent a single point in space defined by geographic coordinates. A node itself can describe for example a city, town, road junction, post box etc. A way is line, represents linear features on the ground - like a road. It consist of an ordered node list. A relation is a colection of the three core elements: nodes, ways and relations. Each element contains all atributes associated with it. The elements were shuffled to ensure that, regardless of the size of the selected subset, the proportions of different types of elements are preserved"""@en ;
     dcterms:issued "2025-01-18"^^xsd:date ;
 
     # License and attribution
@@ -75,7 +75,9 @@
     void:vocabulary 
         <http://www.opengis.net/ont/geosparql#> ,
         <http://www.opengis.net/rdf#> ,
-        <https://osm2rdf.cs.uni-freiburg.de/rdf#> 
+        <https://osm2rdf.cs.uni-freiburg.de/rdf#> ,
+        <https://www.openstreetmap.org/meta/> ,
+        <https://www.openstreetmap.org/wiki/Key:>
     ;
     # Set to number of stream elements in the dataset
     rb:hasStreamElementCount 2030923 ;
