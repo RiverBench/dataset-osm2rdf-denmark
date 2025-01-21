@@ -21,8 +21,10 @@
     dcterms:conformsTo <https://w3id.org/riverbench/schema/metadata> ;
     dcterms:identifier "osm2rdf-denmark" ;
 
-    dcterms:title "osm2rdf-denmark"@en ;
-    dcterms:description """The dataset is based on datasets that were derived from OpenStreetMap data using the osm2rdf tool. It includes information about each element which is of type node (osm:node), way (osm:way) or relation (osm:relation). Nodes are a core concept in OSM and they represent a single point in space defined by geographic coordinates. A node itself can describe for example a city, town, road junction, post box etc. A way is line, represents linear features on the ground - like a road. It consist of an ordered node list. A relation is a colection of the three core elements: nodes, ways and relations. Each element contains all atributes associated with it. The elements were shuffled to ensure that, regardless of the size of the selected subset, the proportions of different types of elements are preserved"""@en ;
+    dcterms:title "OpenStreetMap Denmark (osm2rdf)"@en ;
+    dcterms:description """The dataset is based on datasets that were derived from OpenStreetMap data using the osm2rdf tool. It includes information about each element which is of type node (osm:node), way (osm:way) or relation (osm:relation). Nodes are a core concept in OSM and they represent a single point in space defined by geographic coordinates. A node itself can describe for example a city, town, road junction, post box etc. A way is line, represents linear features on the ground - like a road. It consist of an ordered node list. A relation is a colection of the three core elements: nodes, ways and relations. Each element contains all atributes associated with it.
+
+The elements were shuffled to ensure that, regardless of the size of the selected subset, the proportions of different types of elements are preserved"""@en ;
     dcterms:issued "2025-01-18"^^xsd:date ;
 
     # License and attribution
@@ -31,34 +33,35 @@
     # Example of a valid URL: https://spdx.org/licenses/CC-BY-4.0
     dcterms:license <https://spdx.org/licenses/ODbL-1.0> ;
     dcterms:creator [
-        foaf:name "Karol Nowiński" ;
-        foaf:nick "karol-nowinski" ;
-        foaf:homepage <https://github.com/karol-nowinski> ;
-        # Use this property to order creators in the generated docs (from 1 to N)
-        rbdoc:hasDocWeight 1 ;
-    ] , [
-        foaf:name "Hannah Bast" ;
-        rdfs:comment "Co-author of the osm2rdf tool - OpenStreetMap RDF converter"@en ;
-        rbdoc:hasDocWeight 1 ;
-    ], [
-        foaf:name "Johannes Kalmbach" ;
-        rdfs:comment "Co-author of the osm2rdf tool - OpenStreetMap RDF converter"@en ;
-        rbdoc:hasDocWeight 1 ;
-    ], [
-        foaf:name "Axel Lehmann" ;
-        rdfs:comment "Co-author of the osm2rdf tool - OpenStreetMap RDF converter"@en ;
-        rbdoc:hasDocWeight 1 ;
-    ], [
-        foaf:name "Patrick Brosi" ;
-        rdfs:comment "Co-author of the osm2rdf tool - OpenStreetMap RDF converter"@en ;
-        rbdoc:hasDocWeight 1 ;
-    ], [
         foaf:name "OpenStreetMap & contributors" ;
         foaf:homepage <https://www.openstreetmap.org/>, <https://wiki.openstreetmap.org/wiki/Contributors#Denmark> ;
         rbdoc:hasDocWeight 1 ;
+    ], [
+        foaf:name "Hannah Bast" ;
+        rdfs:comment "Co-author of the osm2rdf tool - OpenStreetMap RDF converter"@en ;
+        rbdoc:hasDocWeight 2 ;
+    ], [
+        foaf:name "Johannes Kalmbach" ;
+        rdfs:comment "Co-author of the osm2rdf tool - OpenStreetMap RDF converter"@en ;
+        rbdoc:hasDocWeight 3 ;
+    ], [
+        foaf:name "Axel Lehmann" ;
+        rdfs:comment "Co-author of the osm2rdf tool - OpenStreetMap RDF converter"@en ;
+        rbdoc:hasDocWeight 4 ;
+    ], [
+        foaf:name "Patrick Brosi" ;
+        rdfs:comment "Co-author of the osm2rdf tool - OpenStreetMap RDF converter"@en ;
+        rbdoc:hasDocWeight 5 ;
+    ], [
+        foaf:name "Karol Nowiński" ;
+        foaf:nick "karol-nowinski" ;
+        foaf:homepage <https://github.com/karol-nowinski> ;
+        rbdoc:hasDocWeight 6 ;
     ];
     # If applicable, add a link or multiples links to the original source of the dataset
-    dcterms:source <https://doi.org/10.1145/3474717.3484256> ;
+    dcterms:source 
+        <https://doi.org/10.1145/3474717.3484256> ,
+        <https://osm2rdf.cs.uni-freiburg.de/> ;
     
     # Themes from EuroVoc
     # E.g., eurovoc:4267, eurovoc:7219
